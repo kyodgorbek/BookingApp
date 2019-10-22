@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.app.bookingapp.presentation.ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,7 +24,7 @@
             android:name="io.fabric.ApiKey"
             android:value="4ce03a6d6eb471237621bb0efc25b4d5874ceaf0" />
         <receiver
-            android:name=".receiver.ConnectivityReceiver"
+            android:name="com.app.bookingapp.presentation.receiver.ConnectivityReceiver"
             android:enabled="true">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
@@ -32,7 +32,7 @@
         </receiver>
 
         <receiver
-            android:name=".receiver.ErrorCodeReceiver"
+            android:name="com.app.bookingapp.presentation.receiver.ErrorCodeReceiver"
             android:enabled="true">
             <intent-filter>
                 <action android:name="receiver.ErrorCodeReceiver" />

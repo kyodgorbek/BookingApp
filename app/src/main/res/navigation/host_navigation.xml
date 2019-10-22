@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashScreenFragment"
-        android:name="com.app.bookingapp.SplashScreenFragment"
+        android:name="com.app.bookingapp.presentation.ui.fragment.SplashScreenFragment"
         android:label="fragment_splash_screen"
         tools:layout="@layout/fragment_splash_screen" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.app.bookingapp.HomeFragment"
+        android:name="com.app.bookingapp.presentation.ui.fragment.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -31,12 +31,19 @@
     </fragment>
     <fragment
         android:id="@+id/myBookingFragment"
-        android:name="com.app.bookingapp.MyBookingFragment"
+        android:name="com.app.bookingapp.presentation.ui.fragment.MyBookingFragment"
         android:label="fragment_my_booking"
         tools:layout="@layout/fragment_my_booking" />
     <fragment
         android:id="@+id/bookFragment"
-        android:name="com.app.bookingapp.BookFragment"
+        android:name="com.app.bookingapp.presentation.ui.fragment.BookFragment"
         android:label="fragment_book"
-        tools:layout="@layout/fragment_book" />
+        tools:layout="@layout/fragment_book">
+        <action
+            android:id="@+id/action_bookFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/host_navigation"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>

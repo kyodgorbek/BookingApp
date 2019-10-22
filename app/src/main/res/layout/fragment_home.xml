@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    tools:context=".presentation.ui.fragment.HomeFragment">
 
     <View
         android:id="@+id/view"
@@ -16,14 +16,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:dropDownSelector="@color/colorAccent"
-        android:dropDownWidth="@dimen/_40sdp"
-        android:spinnerMode="dropdown"
-        android:textColor="@color/white"
-        android:entries="@array/bed_array"
         android:id="@+id/spinner"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/_40sdp"
+        android:dropDownWidth="@dimen/_40sdp"
+        android:dropDownSelector="@color/colorAccent"
+        android:entries="@array/bed_array"
+        android:spinnerMode="dropdown"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view" />
@@ -62,11 +62,11 @@
 
 
     <TextView
-        android:focusable="false"
-        android:singleLine="true"
         android:id="@+id/tvFromDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:focusable="false"
+        android:singleLine="true"
         android:text="From:"
         android:textColor="@color/white"
         android:textSize="@dimen/_8sdp"
@@ -75,18 +75,18 @@
         app:layout_constraintStart_toStartOf="@+id/ed_fromDate" />
 
     <EditText
-        android:focusable="false"
-        android:singleLine="true"
-        android:textSize="@dimen/_10sdp"
         android:id="@+id/ed_toDate"
         android:layout_width="0dp"
         android:layout_height="@dimen/_40sdp"
         android:layout_marginStart="7dp"
         android:layout_marginLeft="7dp"
         android:drawableRight="@drawable/ic_date_range_black_24dp"
+        android:focusable="false"
         android:hint="02-11-2019"
+        android:singleLine="true"
         android:textColor="@color/white"
         android:textColorHint="#DBDBDB"
+        android:textSize="@dimen/_10sdp"
         app:layout_constraintBottom_toBottomOf="@+id/ed_fromDate"
         app:layout_constraintEnd_toStartOf="@+id/btnSearch"
         app:layout_constraintStart_toEndOf="@+id/ed_fromDate"
@@ -107,12 +107,21 @@
         android:id="@+id/btnSearch"
         android:layout_width="@dimen/_40sdp"
         android:layout_height="@dimen/_40sdp"
+        android:background="@color/colorPrimary"
         android:src="@drawable/ic_search_black_24dp"
-        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/ed_toDate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/ed_toDate" />
 
+    <TextView
+        android:padding="@dimen/_4sdp"
+        android:id="@+id/tvClearFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="@string/clear_filter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recylerApartment"
